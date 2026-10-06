@@ -582,7 +582,49 @@ h3 {
 }
 
 .team-card {
+  display: flex;
+  flex-direction: column;
   padding: 24px;
+}
+
+.team-photo-frame,
+.team-photo-placeholder {
+  width: 100%;
+  max-width: 320px;
+  aspect-ratio: 4 / 5;
+  margin: 0 auto 20px;
+  overflow: hidden;
+  border: 1px solid rgba(7, 26, 45, 0.1);
+  border-radius: 18px;
+  background: #f7f8fa;
+}
+
+.team-photo {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.team-photo--javier {
+  object-position: center 18%;
+}
+
+.team-photo--william,
+.team-photo--maria-jose {
+  object-position: center top;
+}
+
+.team-photo--valentina {
+  object-position: center 45%;
+}
+
+.team-photo-placeholder {
+  display: grid;
+  place-items: center;
+  background:
+    radial-gradient(circle at 30% 20%, rgba(232, 200, 120, 0.2), transparent 42%),
+    var(--navy-900);
 }
 
 .avatar {
@@ -590,7 +632,7 @@ h3 {
   height: 58px;
   display: grid;
   place-items: center;
-  margin-bottom: 18px;
+  margin: 0;
   border: 1px solid rgba(215, 173, 89, 0.4);
   border-radius: 50%;
   color: var(--gold-400);
@@ -607,7 +649,8 @@ h3 {
 
 .professional-link {
   display: inline-flex;
-  margin-top: 16px;
+  margin-top: auto;
+  padding-top: 16px;
   color: var(--navy-700);
   font-weight: 800;
   border-bottom: 1px solid rgba(18, 51, 84, 0.3);
@@ -1077,6 +1120,7 @@ h3 {
         "@type": "Person",
         "@id": "https://abogadospuertovaras.cl/#javier-mancilla-rojas",
         "name": "Javier Mancilla Rojas",
+        "image": "https://abogadospuertovaras.cl/assets/team/javier-mancilla-rojas.jpg",
         "jobTitle": "Abogado y socio fundador",
         "worksFor": { "@id": "https://abogadospuertovaras.cl/#organization" },
         "sameAs": ["https://www.linkedin.com/in/javier-mancilla-rojas-bb73151bb/"]
@@ -1093,6 +1137,7 @@ h3 {
         "@type": "Person",
         "@id": "https://abogadospuertovaras.cl/#william-david-diaz-galvez",
         "name": "William David Díaz Gálvez",
+        "image": "https://abogadospuertovaras.cl/assets/team/william-david-diaz-galvez.jpg",
         "jobTitle": "Abogado",
         "worksFor": { "@id": "https://abogadospuertovaras.cl/#organization" }
       },
@@ -1100,6 +1145,7 @@ h3 {
         "@type": "Person",
         "@id": "https://abogadospuertovaras.cl/#maria-jose-merino-santander",
         "name": "María José Merino Santander",
+        "image": "https://abogadospuertovaras.cl/assets/team/maria-jose-merino-santander.jpg",
         "jobTitle": "Abogada",
         "worksFor": { "@id": "https://abogadospuertovaras.cl/#organization" }
       },
@@ -1107,6 +1153,7 @@ h3 {
         "@type": "Person",
         "@id": "https://abogadospuertovaras.cl/#valentina-vasquez-fuentes",
         "name": "Valentina Vásquez Fuentes",
+        "image": "https://abogadospuertovaras.cl/assets/team/valentina-vasquez-fuentes.jpg",
         "jobTitle": "Abogada",
         "worksFor": { "@id": "https://abogadospuertovaras.cl/#organization" }
       },
@@ -1339,33 +1386,43 @@ h3 {
 
         <div class="team-grid">
           <article class="team-card reveal" id="javier-mancilla-rojas">
-            <div class="avatar" aria-hidden="true">JM</div>
+            <div class="team-photo-frame">
+              <img class="team-photo team-photo--javier" src="assets/team/javier-mancilla-rojas.jpg" alt="Retrato profesional de Javier Mancilla Rojas con traje azul." width="630" height="960" loading="lazy" decoding="async">
+            </div>
             <h3>Javier Mancilla Rojas</h3>
             <p class="role">Abogado · Socio Fundador</p>
             <p>Magíster en Derecho de la Empresa, mención Derecho Tributario. Diplomado en Derecho Civil.</p>
-            <a class="professional-link" href="https://www.linkedin.com/in/javier-mancilla-rojas-bb73151bb/" target="_blank" rel="noopener noreferrer" aria-label="Ver perfil de Javier Mancilla Rojas en LinkedIn">LinkedIn</a>
+            <a class="professional-link" href="https://www.linkedin.com/in/javier-mancilla-rojas-bb73151bb/" target="_blank" rel="noopener noreferrer" aria-label="Ver perfil de LinkedIn de Javier Mancilla Rojas">Ver LinkedIn</a>
           </article>
           <article class="team-card reveal" id="silvana-rosas-urra">
-            <div class="avatar" aria-hidden="true">SR</div>
+            <div class="team-photo-placeholder" aria-hidden="true">
+              <div class="avatar">SR</div>
+            </div>
             <h3>Silvana Florencia Rosas Urra</h3>
             <p class="role">Abogada · Socia Fundadora</p>
             <p>Derecho Penal y Derecho de Familia.</p>
-            <a class="professional-link" href="https://www.linkedin.com/in/silvana-florencia-rosas-urra-b70739182" target="_blank" rel="noopener noreferrer" aria-label="Ver perfil de Silvana Florencia Rosas Urra en LinkedIn">LinkedIn</a>
+            <a class="professional-link" href="https://www.linkedin.com/in/silvana-florencia-rosas-urra-b70739182" target="_blank" rel="noopener noreferrer" aria-label="Ver perfil de LinkedIn de Silvana Florencia Rosas Urra">Ver LinkedIn</a>
           </article>
           <article class="team-card reveal" id="william-david-diaz-galvez">
-            <div class="avatar" aria-hidden="true">WD</div>
+            <div class="team-photo-frame">
+              <img class="team-photo team-photo--william" src="assets/team/william-david-diaz-galvez.jpg" alt="Retrato profesional de William David Díaz Gálvez con traje, junto a banderas." width="752" height="960" loading="lazy" decoding="async">
+            </div>
             <h3>William David Díaz Gálvez</h3>
             <p class="role">Abogado</p>
             <p>Especialista en Quiebras y Derecho Civil.</p>
           </article>
           <article class="team-card reveal" id="maria-jose-merino-santander">
-            <div class="avatar" aria-hidden="true">MJ</div>
+            <div class="team-photo-frame">
+              <img class="team-photo team-photo--maria-jose" src="assets/team/maria-jose-merino-santander.jpg" alt="Retrato de María José Merino Santander en una oficina." width="720" height="960" loading="lazy" decoding="async">
+            </div>
             <h3>María José Merino Santander</h3>
             <p class="role">Abogada</p>
             <p>Derecho de Familia y Derecho del Consumidor.</p>
           </article>
           <article class="team-card reveal" id="valentina-vasquez-fuentes">
-            <div class="avatar" aria-hidden="true">VV</div>
+            <div class="team-photo-frame">
+              <img class="team-photo team-photo--valentina" src="assets/team/valentina-vasquez-fuentes.jpg" alt="Retrato de Valentina Vásquez Fuentes en un edificio institucional." width="899" height="960" loading="lazy" decoding="async">
+            </div>
             <h3>Valentina Vásquez Fuentes</h3>
             <p class="role">Abogada</p>
             <p>Derecho de Familia.</p>

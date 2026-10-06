@@ -16,6 +16,10 @@
 |---|---|
 | `index.html` | Documento principal, estilos, contenido, JavaScript y JSON-LD |
 | `assets/brand-abogados-puerto-varas.jpg` | Imagen visual reutilizada por la interfaz y metadatos sociales |
+| `assets/team/javier-mancilla-rojas.jpg` | Fotografía optimizada de Javier Mancilla Rojas |
+| `assets/team/william-david-diaz-galvez.jpg` | Fotografía optimizada de William David Díaz Gálvez |
+| `assets/team/maria-jose-merino-santander.jpg` | Fotografía optimizada de María José Merino Santander |
+| `assets/team/valentina-vasquez-fuentes.jpg` | Fotografía optimizada de Valentina Vásquez Fuentes |
 | `robots.txt` | Reglas de rastreo y referencia al sitemap |
 | `sitemap.xml` | Inventario de URLs públicas indexables |
 | `README.md` | Operación técnica y flujo de publicación |
@@ -79,9 +83,10 @@ El bloque utiliza `@graph` e identificadores estables:
 - Materias legales confirmadas mediante `knowsAbout`.
 - Cinco nodos `Person` vinculados al estudio.
 - `sameAs` de LinkedIn solo para Javier Mancilla Rojas y Silvana Florencia Rosas Urra.
+- Propiedad `image` en los cuatro nodos `Person` que cuentan con fotografía confirmada.
 - `FAQPage` con cuatro preguntas que coinciden con el contenido visible.
 
-No se incluyeron precio, horario, correo, coordenadas, reseñas, puntuaciones ni métricas. `BreadcrumbList` se consideró no aplicable a la portada de una landing con una sola URL pública; deberá incorporarse si en una fase futura existe una jerarquía real de páginas.
+No se incluyeron precio, horario, correo, coordenadas, reseñas, puntuaciones ni métricas. Tampoco se declaró una imagen para Silvana Florencia Rosas Urra porque el DOCX fuente no contiene una fotografía incrustada de ella. `BreadcrumbList` se consideró no aplicable a la portada de una landing con una sola URL pública; deberá incorporarse si en una fase futura existe una jerarquía real de páginas.
 
 ## 6. Indexabilidad
 
@@ -105,12 +110,14 @@ No se agregaron anclas internas al sitemap porque no son páginas independientes
 - HTML semántico con `header`, `nav`, `main`, secciones y `footer`.
 - Etiquetas asociadas a campos del formulario.
 - Texto alternativo descriptivo para la imagen principal.
+- Texto alternativo descriptivo para cada fotografía disponible del equipo.
 - Título para el iframe del mapa.
 - Etiquetas accesibles específicas en botones y enlaces de contacto.
 - Estado expandido y nombre accesible dinámico en el menú móvil.
 - `aria-describedby` en el formulario.
 - Soporte para `prefers-reduced-motion` conservado.
 - Enlaces externos con `noopener noreferrer`.
+- Enlaces de LinkedIn con `aria-label` individual, apertura en nueva pestaña y relación segura.
 
 ## 8. Rendimiento
 
@@ -123,6 +130,8 @@ La misma fotografía JPEG estaba codificada en Base64 tres veces en `index.html`
 - Sin cambios visuales en la imagen aprobada.
 
 Se añadió precarga para la imagen principal y prioridad alta en el elemento visible sobre el primer pliegue.
+
+Las cuatro fotografías disponibles del equipo se extrajeron del DOCX fuente y se procesaron como JPG progresivo con calidad web, lado máximo de 960 píxeles y nombres descriptivos. En la interfaz usan un marco de proporción uniforme, `loading="lazy"`, `decoding="async"` y dimensiones intrínsecas. El DOCX fuente no se incorporó al repositorio.
 
 ## 9. Formulario y WhatsApp
 
@@ -153,6 +162,7 @@ También existen enlaces directos a ambos teléfonos informados. Las URLs `wa.me
 - Crear o reclamar el Perfil de Empresa de Google.
 - Configurar, si corresponde, redirección 301 de `www` al dominio raíz.
 - Añadir páginas por área legal con contenido original y revisado.
-- Incorporar correo institucional y fotografías solo cuando el cliente los confirme.
+- Incorporar correo institucional cuando el cliente lo confirme.
+- Solicitar una fotografía clara de Silvana Florencia Rosas Urra para reemplazar el placeholder actual.
 - Monitorizar errores 404, cobertura de indexación y Core Web Vitals.
 - Revalidar JSON-LD y vistas previas sociales después de cada cambio de contenido.

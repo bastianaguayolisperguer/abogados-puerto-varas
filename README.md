@@ -16,7 +16,7 @@ Sitio estático sin frameworks ni dependencias de ejecución:
 - HTML5 semántico.
 - CSS embebido en `index.html`.
 - JavaScript nativo para navegación, animaciones y formulario de WhatsApp.
-- Recurso JPG local reutilizado por la interfaz y los metadatos sociales.
+- Recursos JPG locales optimizados para la interfaz, el equipo y los metadatos sociales.
 - Archivos estándar de rastreo para buscadores.
 
 No existe un proceso de compilación. Cloudflare Pages publica los archivos estáticos desde la raíz del repositorio.
@@ -26,7 +26,12 @@ No existe un proceso de compilación. Cloudflare Pages publica los archivos est�
 ```text
 .
 ├── assets/
-│   └── brand-abogados-puerto-varas.jpg
+│   ├── brand-abogados-puerto-varas.jpg
+│   └── team/
+│       ├── javier-mancilla-rojas.jpg
+│       ├── maria-jose-merino-santander.jpg
+│       ├── valentina-vasquez-fuentes.jpg
+│       └── william-david-diaz-galvez.jpg
 ├── docs/
 │   ├── checklist-seo.md
 │   ├── informe-final-abogados-puerto-varas.md
@@ -53,16 +58,18 @@ El dominio raíz y `www` respondieron correctamente por HTTPS durante la revisi�
 
 1. Crear una rama desde la versión actualizada de `main`.
 2. Editar `index.html` y los recursos estrictamente necesarios.
-3. Si se agregan páginas públicas, incorporarlas a `sitemap.xml` y revisar enlaces internos.
-4. Mantener el canonical de cada página apuntando a su URL preferida.
-5. Validar HTML, JSON-LD, enlaces, accesibilidad básica y visualización responsive.
-6. Hacer commits claros y abrir un Pull Request.
-7. Revisar el despliegue de vista previa antes de integrar.
+3. Para nuevas fotografías del equipo, usar nombres descriptivos, optimizarlas para web y guardarlas en `assets/team/`.
+4. Si se agregan páginas públicas, incorporarlas a `sitemap.xml` y revisar enlaces internos.
+5. Mantener el canonical de cada página apuntando a su URL preferida.
+6. Validar HTML, JSON-LD, enlaces, accesibilidad básica y visualización responsive.
+7. Hacer commits claros y abrir un Pull Request.
+8. Revisar el despliegue de vista previa antes de integrar.
 
 ## Checklist de publicación
 
 - [ ] Revisar textos, teléfonos, dirección y enlaces de WhatsApp.
 - [ ] Confirmar que los enlaces externos usen `target="_blank"` con `rel="noopener noreferrer"`.
+- [ ] Confirmar que las fotografías tengan `alt` descriptivo y que no exista una imagen atribuida sin fuente confirmada.
 - [ ] Validar que `index.html`, `robots.txt` y `sitemap.xml` respondan con estado HTTP 200.
 - [ ] Comprobar canonical, meta robots, Open Graph y Twitter Card.
 - [ ] Validar los datos estructurados con una herramienta compatible con Schema.org.

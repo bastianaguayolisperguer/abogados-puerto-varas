@@ -21,17 +21,20 @@ Estados utilizados: **Completado**, **Verificado**, **Pendiente externo** y **No
 | Datos estructurados | Implementar WebSite | Completado | `index.html` | Nodo en `@graph` |
 | Datos estructurados | Implementar LegalService, LocalBusiness y Organization | Completado | `index.html` | Una entidad con tipos múltiples |
 | Datos estructurados | Implementar Person | Completado | `index.html` | Cinco profesionales confirmados |
+| Datos estructurados | Asociar fotografías confirmadas a Person | Completado | `index.html` | Cuatro imágenes reales; Silvana se omite por falta de fuente |
 | Datos estructurados | Implementar FAQPage | Completado | `index.html` | Coincide con FAQ visible |
 | Datos estructurados | Implementar BreadcrumbList | No aplica | — | No existe jerarquía de páginas en una landing de URL única |
 | Datos estructurados | Evitar datos no confirmados | Verificado | `index.html` | Sin email, horarios, precio, reseñas ni métricas |
 | Accesibilidad | Mantener un solo H1 | Verificado | `index.html` | H1 orientado a servicio y ubicación |
 | Accesibilidad | Revisar H2 y H3 | Verificado | `index.html` | Jerarquía coherente |
 | Accesibilidad | Revisar alt y títulos | Completado | `index.html` | Imagen principal e iframe descritos |
+| Accesibilidad | Agregar alt descriptivo a fotos del equipo | Completado | `index.html` | Cuatro fotografías disponibles descritas individualmente |
 | Accesibilidad | Asociar labels del formulario | Verificado | `index.html` | Todos los controles tienen label |
 | Accesibilidad | Mejorar menú móvil | Completado | `index.html` | Estado y nombre accesible actualizados |
 | Accesibilidad | Respetar movimiento reducido | Verificado | `index.html` | Media query conservada |
 | Performance | Externalizar imagen Base64 repetida | Completado | `index.html`, `assets/` | Un único JPG cacheable |
 | Performance | Declarar dimensiones de imagen | Completado | `index.html` | 1254 × 1254 |
+| Performance | Optimizar fotografías del equipo | Completado | `assets/team/` | JPG progresivo, lado máximo de 960 px y carga diferida |
 | Performance | Mantener sitio sin frameworks | Verificado | Repositorio | Sin dependencias ni build |
 | Social sharing | Completar Open Graph | Completado | `index.html` | Imagen real, título, descripción y alt |
 | Social sharing | Agregar Twitter Card | Completado | `index.html` | Tarjeta `summary` |
@@ -44,6 +47,9 @@ Estados utilizados: **Completado**, **Verificado**, **Pendiente externo** y **No
 | Enlaces | Verificar teléfonos y WhatsApp | Verificado | `index.html` | Formato internacional correcto |
 | Enlaces | Agregar LinkedIn confirmado | Completado | `index.html` | Javier y Silvana |
 | Enlaces | Proteger pestañas nuevas | Completado | `index.html` | `noopener noreferrer` |
+| Equipo | Integrar fotografías reales disponibles | Completado | `index.html`, `assets/team/` | Javier, William, María José y Valentina |
+| Equipo | Obtener fotografía clara de Silvana | Pendiente externo | — | El DOCX fuente no contiene una imagen incrustada para ella |
+| QA | Revisar sección de equipo en escritorio y móvil | Verificado | `index.html` | Tarjetas, recortes, placeholder y enlaces revisados visualmente |
 | Próximos pasos externos | Verificar Google Search Console | Pendiente externo | — | Requiere cuenta autorizada |
 | Próximos pasos externos | Enviar sitemap | Pendiente externo | — | Después del despliegue |
 | Próximos pasos externos | Solicitar indexación | Pendiente externo | — | Después del despliegue |

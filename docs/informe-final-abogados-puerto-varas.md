@@ -21,6 +21,7 @@ La versión entregada incorpora:
 - Información de ubicación y teléfonos.
 - Optimización SEO técnica y local.
 - Metadatos para compartir el sitio en WhatsApp, LinkedIn y otras redes.
+- Fotografías reales y optimizadas de cuatro integrantes del equipo.
 - Datos estructurados para ayudar a los buscadores a interpretar el negocio, el equipo y las preguntas frecuentes.
 - Archivos de rastreo e indexación.
 - Documentación técnica y comercial para continuidad del proyecto.
@@ -52,6 +53,8 @@ Las áreas incorporadas son Derecho Civil, Derecho de Familia, herencias, contra
 - Se revisaron los botones de contacto y el formulario conectado a WhatsApp.
 - Se incorporó una sección breve de preguntas frecuentes.
 - Se agregaron enlaces a los perfiles confirmados de LinkedIn de Javier Mancilla Rojas y Silvana Florencia Rosas Urra.
+- Se integraron fotografías reales de Javier Mancilla Rojas, William David Díaz Gálvez, María José Merino Santander y Valentina Vásquez Fuentes, extraídas del material fuente y optimizadas como JPG para web.
+- Se mantuvo un placeholder con iniciales para Silvana Florencia Rosas Urra porque el material fuente no contiene una fotografía incrustada de ella.
 
 ### Publicación e infraestructura
 
@@ -98,6 +101,8 @@ Se implementó un grafo Schema.org con:
 - `Person` para los cinco profesionales informados.
 - `FAQPage` para las preguntas visibles.
 
+Los cuatro nodos `Person` con fotografía confirmada incluyen una URL de imagen propia. El nodo de Silvana no declara una imagen porque no existe un archivo fuente verificable.
+
 No se agregaron horarios, correo electrónico, coordenadas, reseñas, métricas ni otros datos no confirmados. `BreadcrumbList` no se incorporó porque el proyecto tiene una sola URL pública y no existe una jerarquía real de páginas que representar.
 
 ### Sitemap y robots
@@ -106,11 +111,13 @@ No se agregaron horarios, correo electrónico, coordenadas, reseñas, métricas 
 
 ### Accesibilidad básica
 
-Se mejoraron textos alternativos, etiquetas accesibles de botones, descripción del formulario, modo de entrada telefónica y nombres de enlaces externos. Los enlaces que abren otra pestaña incluyen protección `noopener noreferrer`.
+Se mejoraron textos alternativos, etiquetas accesibles de botones, descripción del formulario, modo de entrada telefónica y nombres de enlaces externos. Cada fotografía del equipo tiene un `alt` descriptivo. Los enlaces que abren otra pestaña incluyen protección `noopener noreferrer` y los perfiles de LinkedIn cuentan con un `aria-label` específico.
 
 ### Rendimiento
 
 La fotografía que estaba repetida tres veces como Base64 dentro del HTML se convirtió en un único archivo JPG reutilizable y cacheable. Esto reduce de forma importante el peso del documento HTML sin modificar la apariencia del sitio. El recurso principal además declara dimensiones para reducir cambios de layout durante la carga.
+
+Las cuatro fotografías del equipo se limitaron a un máximo de 960 píxeles, se convirtieron a JPG progresivo y se guardaron con nombres descriptivos en `assets/team/`. Todas declaran dimensiones, carga diferida y decodificación asíncrona.
 
 ### HTTPS
 
@@ -133,6 +140,7 @@ La conectividad HTTPS fue comprobada tanto en el dominio raíz como en `www`, co
 | Sitemap | Ausente | XML válido con la única URL pública | Facilita descubrimiento e indexación | Debe enviarse en Search Console |
 | Robots | Ausente | Rastreo general permitido y sitemap declarado | Facilita el rastreo técnico | No bloquea recursos |
 | LinkedIn | Perfiles no enlazados | Dos enlaces profesionales confirmados | Refuerza trazabilidad profesional | Abren en pestaña nueva de forma segura |
+| Fotografías del equipo | Tarjetas con iniciales | Cuatro fotografías reales optimizadas y un placeholder identificado | Mejora confianza y reconocimiento del equipo | Silvana continúa pendiente por falta de foto en la fuente |
 | Accesibilidad | Base correcta con oportunidades de mejora | Etiquetas, alt y contexto adicional | Mejora navegación y comprensión | Recomendable una auditoría periódica |
 | Imagen principal | Repetida tres veces dentro del HTML | Un archivo externo reutilizable | Mejora técnica de carga y caché | Apariencia conservada |
 
@@ -177,7 +185,7 @@ Esta preparación debe complementarse con señales externas reales: Perfil de Em
 4. Solicitar la indexación de la portada después del despliegue.
 5. Agregar un correo institucional si el cliente lo define.
 6. Incorporar un logo definitivo si la identidad visual cambia.
-7. Incorporar fotografías profesionales del equipo si el cliente las entrega y autoriza.
+7. Solicitar y autorizar una fotografía clara de Silvana Florencia Rosas Urra para reemplazar el placeholder actual.
 8. Crear páginas internas por área legal en una fase 2.
 9. Solicitar reseñas reales de clientes en el Perfil de Empresa de Google.
 10. Generar contenido jurídico local revisado por profesionales.
@@ -193,4 +201,4 @@ Los resultados dependen del tiempo, la competencia, la autoridad del dominio, la
 
 Abogados Puerto Varas dispone de un sitio publicado, seguro, accesible en sus aspectos básicos y preparado técnicamente para SEO local. La landing conserva su diseño aprobado, ofrece contacto directo por WhatsApp y funciona sobre una infraestructura estática, escalable y de bajo costo para esta etapa.
 
-La entrega deja una base clara para la siguiente fase: integrar el Pull Request, verificar el despliegue, activar Search Console, enviar el sitemap y fortalecer la presencia local mediante un Perfil de Empresa de Google, reseñas reales y contenido jurídico útil.
+La entrega deja una base clara para la siguiente fase: integrar el Pull Request, verificar el despliegue, completar la fotografía pendiente de Silvana, activar Search Console, enviar el sitemap y fortalecer la presencia local mediante un Perfil de Empresa de Google, reseñas reales y contenido jurídico útil.
