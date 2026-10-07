@@ -297,10 +297,11 @@ textarea {
 
 .hero {
   position: relative;
-  min-height: 820px;
+  min-height: min(780px, 100svh);
   display: grid;
   align-items: center;
-  padding-top: 150px;
+  padding-top: 128px;
+  padding-bottom: 72px;
   color: #fff;
   overflow: hidden;
   background: var(--navy-950);
@@ -329,9 +330,14 @@ textarea {
   position: relative;
   z-index: 1;
   display: grid;
-  grid-template-columns: 1.05fr 0.95fr;
-  gap: 54px;
+  grid-template-columns: minmax(0, 1.18fr) minmax(320px, 0.82fr);
+  gap: clamp(36px, 4.5vw, 64px);
   align-items: center;
+}
+
+.hero__content {
+  min-width: 0;
+  max-width: 680px;
 }
 
 .eyebrow {
@@ -363,10 +369,11 @@ h2 {
 }
 
 h1 {
-  max-width: 760px;
+  max-width: 700px;
   margin-bottom: 22px;
-  font-size: clamp(2.8rem, 6.2vw, 5.85rem);
-  letter-spacing: -0.055em;
+  font-size: clamp(2.55rem, 4.7vw, 4.7rem);
+  line-height: 1.02;
+  letter-spacing: -0.045em;
 }
 
 h2 {
@@ -409,26 +416,31 @@ h3 {
 }
 
 .hero__card {
-  max-width: 520px;
+  width: 100%;
+  max-width: 430px;
   justify-self: end;
+  align-self: center;
   overflow: hidden;
   border: 1px solid rgba(232, 200, 120, 0.24);
   border-radius: var(--radius-lg);
   background: rgba(7, 26, 45, 0.7);
-  box-shadow: var(--shadow);
+  box-shadow: 0 28px 80px rgba(4, 16, 31, 0.32);
   backdrop-filter: blur(12px);
 }
 
 .hero__card img {
   width: 100%;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
+  height: auto;
+  aspect-ratio: 6 / 5;
+  object-fit: contain;
+  object-position: center;
+  background: var(--navy-900);
 }
 
 .hero__card-footer {
-  padding: 22px;
   display: grid;
   gap: 4px;
+  padding: 18px 20px 20px;
   color: #fff;
 }
 
@@ -918,17 +930,12 @@ h3 {
 }
 
 @media (max-width: 1060px) {
-  .hero__grid,
   .two-col,
   .location__grid,
   .contact__grid,
   .mission__box,
   .payment__box {
     grid-template-columns: 1fr;
-  }
-
-  .hero__card {
-    justify-self: start;
   }
 
   .cards-grid {
@@ -941,6 +948,22 @@ h3 {
 
   .payment__box .btn {
     width: fit-content;
+  }
+}
+
+@media (max-width: 920px) {
+  .hero__grid {
+    grid-template-columns: 1fr;
+    gap: 44px;
+  }
+
+  .hero__content {
+    max-width: 760px;
+  }
+
+  .hero__card {
+    max-width: 420px;
+    justify-self: center;
   }
 }
 
@@ -975,13 +998,14 @@ h3 {
     padding: 10px;
   }
 
-  .hero {
-    min-height: auto;
-    padding-top: 132px;
-  }
-
   .section {
     padding: 70px 0;
+  }
+
+  .hero {
+    min-height: auto;
+    padding-top: 124px;
+    padding-bottom: 72px;
   }
 
   .promise__grid,
@@ -1016,6 +1040,30 @@ h3 {
   .hero__actions,
   .hero__actions .btn {
     width: 100%;
+  }
+
+  .hero {
+    padding-top: 112px;
+    padding-bottom: 64px;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.4rem, 10.6vw, 3rem);
+    line-height: 1.03;
+    letter-spacing: -0.04em;
+  }
+
+  .hero__grid {
+    gap: 38px;
+  }
+
+  .hero__badges {
+    margin-top: 24px;
+    gap: 10px;
+  }
+
+  .hero__card-footer {
+    padding: 16px 18px 18px;
   }
 
   .cards-grid,
